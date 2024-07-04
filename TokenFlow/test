@@ -1,0 +1,12 @@
+import cv2
+
+
+video_capture = cv2.VideoCapture('./data/1.mp4')
+fps = video_capture.get(cv2.CAP_PROP_FPS)
+idx = 0
+while True:
+    flag, frame = video_capture.read()
+    idx += 1
+    if not flag: break
+video_capture.release()
+print(idx)
